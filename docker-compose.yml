@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  bonding-curve-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solana-bonding-curve-launchpad
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - SOLANA_RPC_URL=${SOLANA_RPC_URL:-https://api.mainnet-beta.solana.com}
+    volumes:
+      - ./logs:/app/logs
+    command: ["demo"]
