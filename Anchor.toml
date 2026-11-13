@@ -1,0 +1,22 @@
+[toolchain]
+anchor_version = "0.29.0"
+
+[features]
+seeds = true
+skip-lint = false
+
+[programs.mainnet]
+bonding_curve = "BondCurve1111111111111111111111111111111111"
+
+[programs.devnet]
+bonding_curve = "BondCurveDevnet1111111111111111111111111111"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "mainnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "echo 'Testing via Anchor SDK'"
